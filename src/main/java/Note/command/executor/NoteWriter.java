@@ -1,7 +1,7 @@
-package command.executor;
+package Note.command.executor;
 
-import command.CommandType;
-import model.Note;
+import Note.command.CommandType;
+import Note.model.Note;
 
 public class NoteWriter extends AbstractCommandExecutor {
     @Override

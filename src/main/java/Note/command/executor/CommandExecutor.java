@@ -1,6 +1,6 @@
-package command.executor;
+package Note.command.executor;
 
-import command.CommandType;
+import Note.command.CommandType;
 
 public interface CommandExecutor {
 

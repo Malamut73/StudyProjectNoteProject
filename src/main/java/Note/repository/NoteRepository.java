@@ -1,6 +1,6 @@
-package repository;
+package Note.repository;
 
-import model.Note;
+import Note.model.Note;
 
 import java.util.Set;
 

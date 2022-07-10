@@ -1,6 +1,6 @@
-package main;
+package Note;
 
-import command.CommandReader;
+import Note.command.CommandReader;
 
 public class Main {
 

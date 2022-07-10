@@ -1,7 +1,7 @@
-package command.executor;
+package Note.command.executor;
 
-import command.CommandType;
-import model.Folder;
+import Note.command.CommandType;
+import Note.model.Folder;
 
 public class FolderCreator extends AbstractCommandExecutor{
 

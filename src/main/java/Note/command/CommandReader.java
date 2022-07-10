@@ -1,6 +1,6 @@
-package command;
+package Note.command;
 
-import command.executor.*;
+import Note.command.executor.*;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class CommandReader {
             CommandType.CREATE_FOLDER, new FolderCreator()
     );
 
-    /** Stop reading on command "exit". */
+    /** Stop reading on Note.command "exit". */
     public static void startReading() {
         Scanner s = new Scanner(System.in);
 
@@ -45,7 +45,7 @@ public class CommandReader {
             return 0;
         }
 
-        System.out.println("Incorrect command");
+        System.out.println("Incorrect Note.command");
         return -1;
     }
 

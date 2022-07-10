@@ -1,7 +1,7 @@
-package repository.impl;
+package Note.repository.impl;
 
-import model.Note;
-import repository.NoteRepository;
+import Note.model.Note;
+import Note.repository.NoteRepository;
 
 import java.util.HashSet;
 import java.util.Set;

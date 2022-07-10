@@ -1,7 +1,7 @@
-package repository.impl;
+package Note.repository.impl;
 
-import model.Folder;
-import repository.FolderRepository;
+import Note.model.Folder;
+import Note.repository.FolderRepository;
 
 import java.util.HashSet;
 import java.util.Set;

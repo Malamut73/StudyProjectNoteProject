@@ -1,11 +1,11 @@
-package command.executor;
+package Note.command.executor;
 
-import model.Folder;
-import model.Note;
-import repository.FolderRepository;
-import repository.NoteRepository;
-import repository.impl.FolderRepositoryImpl;
-import repository.impl.NoteRepositoryImpl;
+import Note.model.Folder;
+import Note.model.Note;
+import Note.repository.FolderRepository;
+import Note.repository.NoteRepository;
+import Note.repository.impl.FolderRepositoryImpl;
+import Note.repository.impl.NoteRepositoryImpl;
 
 import java.util.LinkedList;
 import java.util.List;

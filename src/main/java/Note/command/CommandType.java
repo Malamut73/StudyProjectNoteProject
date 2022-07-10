@@ -1,4 +1,4 @@
-package command;
+package Note.command;
 
 public enum CommandType {
     CREATE_NOTE,

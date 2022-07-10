@@ -1,4 +1,4 @@
-package model;
+package Note.model;
 
 import java.time.Instant;
 import java.util.Objects;
