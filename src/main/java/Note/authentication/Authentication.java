@@ -1,4 +1,6 @@
-package Note;
+package Note.authentication;
+
+import Note.context.UserContext;
 
 import java.util.Scanner;
 
@@ -22,6 +24,7 @@ public class Authentication {
 
             if (validate(login, password)) {
                 isAuthenticationSuccess = true;
+                UserContext.setUserLogin(login);
             } else {
                 System.out.println("Password is incorrect. Please try again. ");
             }

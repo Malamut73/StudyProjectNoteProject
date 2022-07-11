@@ -2,6 +2,7 @@ package Note.command.executor;
 
 import Note.command.CommandType;
 import Note.model.Note;
+import Note.context.UserContext;
 
 public class NoteCreator extends AbstractCommandExecutor{
     @Override
@@ -39,7 +40,7 @@ public class NoteCreator extends AbstractCommandExecutor{
 
         var noteText = noteTextSb.toString();
 
-        var newNote = new Note(noteName, noteText, folder.get());
+        var newNote = new Note(noteName, noteText, folder.get(), UserContext.getUserLogin());
 
         noteRepository.save(newNote);
 
