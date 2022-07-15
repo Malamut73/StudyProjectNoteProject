@@ -13,6 +13,7 @@ import java.time.Instant;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Note implements Serializable {
 
+    private int id;
     private Folder parentFolder;
     @EqualsAndHashCode.Include
     private final String name;
@@ -21,7 +22,8 @@ public class Note implements Serializable {
     private final Instant creationDate;
     private Instant updateDate;
 
-    public Note(String name, String text, Folder parentFolder, String authorEmail) {
+    public Note(int id, String name, String text, Folder parentFolder, String authorEmail) {
+        this.id = id;
         this.parentFolder = parentFolder;
         this.name = name;
         this.text = text;

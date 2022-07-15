@@ -14,10 +14,10 @@ public class FolderRepositoryImpl implements FolderRepository {
 
     static {
 
-        loadDataFromFile();
-        if(FOLDERS.stream().noneMatch(folder -> folder.getName().equals("root"))){
-            FOLDERS.add(new Folder("root", null));
-        }
+//        loadDataFromFile();
+//        if(FOLDERS.stream().noneMatch(folder -> folder.getName().equals("root"))){
+//            FOLDERS.add(new Folder("root", null));
+//        }
     }
 
     private static final FolderRepository SINGLETON = new FolderRepositoryImpl();

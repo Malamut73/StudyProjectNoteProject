@@ -36,17 +36,7 @@ public class Authentication {
     }
 
     public boolean validate(String login, String password) {
-//        Можно так:
-//        if (login.equals(LOGIN) && password.equals(PASSWORD)) {
-//            return true;
-//        } else {
-//            return false;
-//        }
 
-//        А можно так:
-//        return login.equals(LOGIN) && password.equals(PASSWORD) ? true : false;
-
-//        Но еще можно так:
         return login.equals(LOGIN) && password.equals(PASSWORD);
     }
 }

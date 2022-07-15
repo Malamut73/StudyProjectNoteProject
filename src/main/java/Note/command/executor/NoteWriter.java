@@ -36,12 +36,12 @@ public class NoteWriter extends AbstractCommandExecutor {
         }
 
         for (Note note : noteRepository.findAll()) {
-            var path = findFolderPath(note.getName());
+//            var path = findFolderPath(note.getName());
 
             System.out.printf("Name: \"%s\". Text: \"%s\". FullPath: %s %n",
                     note.getName(),
                     note.getText(),
-                    path
+                    "empty path"
             );
         }
 

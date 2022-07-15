@@ -40,7 +40,7 @@ public class NoteCreator extends AbstractCommandExecutor{
 
         var noteText = noteTextSb.toString();
 
-        var newNote = new Note(noteName, noteText, folder.get(), UserContext.getUserLogin());
+        var newNote = new Note(0, noteName, noteText, folder.get(), UserContext.getUserLogin());
 
         noteRepository.save(newNote);
 
