@@ -5,8 +5,8 @@ import Note.model.Note;
 import Note.repository.NoteRepository;
 import lombok.SneakyThrows;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,18 +20,17 @@ public class NoteRepositoryImpl implements NoteRepository {
         return SINGLETON;
     }
 
+    @SneakyThrows
     @Override
     public Set<Note> findAll() {
 
-        try(var st = ApplicationDataSource.getConnection()
-                .prepareStatement("select * from note")){
-            var result = st.executeQuery();
+        String selected = "SELECT * FROM note";
+        PreparedStatement preparedStatement = ApplicationDataSource.getConnection()
+                .prepareStatement(selected);
+        ResultSet resultSet = preparedStatement.executeQuery();
 
-            return mapResultSetToNotes(result);
+        return mapResultSetToNotes(resultSet);
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
 
     }
     @Override
@@ -53,6 +52,10 @@ public class NoteRepositoryImpl implements NoteRepository {
             var name = resultSet.getString("name");
             var text = resultSet.getString("text");
             var authorEmail = resultSet.getString("authorEmail");
+            var parentFolder = resultSet.getString("parentFolder");
+            var creationDate = resultSet.getDate("creationDate");
+            var updateDate = resultSet.getDate("updateDate");
+            var parentFolder_id = resultSet.getInt("parentFolder_id");
 
             notes.add(new Note(id, name,text, null, authorEmail));
         }

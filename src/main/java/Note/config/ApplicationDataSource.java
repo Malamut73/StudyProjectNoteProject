@@ -1,26 +1,30 @@
 package Note.config;
 
-import org.postgresql.ds.PGSimpleDataSource;
-
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ApplicationDataSource {
 
-    private static  final PGSimpleDataSource ds;
-    private static final Connection connection;
+    private static final ApplicationDataSource SINGLETON_DATA_SOURCES = new ApplicationDataSource();
 
-    static {
-        ds = new PGSimpleDataSource();
-        ds.setServerNames(new String[]{"localhost:5432"});
-        ds.setDatabaseName("NoteProject");
-        ds.setUser("postgres");
-        ds.setPassword("root");
+    private ApplicationDataSource(){}
 
+    private static final String DB_USERNAME = "root";
+    private static final String DB_PASSWORD = "lemoor@mail.ru";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/noteproject";
+
+    private static Connection connection;
+    Statement statement;
+    {
         try {
-            connection = ds.getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            statement = connection.createStatement();
+            System.out.println("connected");
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
