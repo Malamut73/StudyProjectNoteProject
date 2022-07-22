@@ -1,23 +1,13 @@
 package Note;
 
-import Note.authentication.Authentication;
-import Note.command.CommandReader;
-import lombok.SneakyThrows;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
 
-    @SneakyThrows
     public static void main(String[] args) {
-        //create note note1 root texttexttext
-        System.out.println("Hello, World!");
-
-//        authenticate();
-
-        CommandReader.startReading();
+        SpringApplication.run(Main.class);
     }
 
-    private static void authenticate() {
-        Authentication authentication = new Authentication();
-        authentication.authenticate();
-    }
 }

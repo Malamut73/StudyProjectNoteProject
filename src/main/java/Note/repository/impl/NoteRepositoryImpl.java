@@ -4,21 +4,15 @@ import Note.config.ApplicationDataSource;
 import Note.model.Note;
 import Note.repository.NoteRepository;
 import lombok.SneakyThrows;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashSet;
 import java.util.Set;
 
+@Repository
 public class NoteRepositoryImpl implements NoteRepository {
-
-    private static final NoteRepositoryImpl SINGLETON = new NoteRepositoryImpl();
-
-    private NoteRepositoryImpl() {}
-
-    public static NoteRepository getSingleton() {
-        return SINGLETON;
-    }
 
     @SneakyThrows
     @Override
@@ -41,7 +35,6 @@ public class NoteRepositoryImpl implements NoteRepository {
     public void remove(Note note) {
 
     }
-
     @SneakyThrows
     private static Set<Note> mapResultSetToNotes(ResultSet resultSet){
 

@@ -31,6 +31,14 @@ public class Note implements Serializable {
         creationDate = Instant.now();
     }
 
+    public Note(String name, String text, Folder parentFolder, String authorEmail) {
+        this.parentFolder = parentFolder;
+        this.name = name;
+        this.text = text;
+        this.authorEmail = authorEmail;
+        creationDate = Instant.now();
+    }
+
     public void setText(String text) {
         this.text = text;
         this.updateDate = Instant.now();

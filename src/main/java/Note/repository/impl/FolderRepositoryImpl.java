@@ -2,11 +2,13 @@ package Note.repository.impl;
 
 import Note.model.Folder;
 import Note.repository.FolderRepository;
+import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Repository
 public class FolderRepositoryImpl implements FolderRepository {
 
     private static String DATA_FILE_NAME = "data-folder.dat";
@@ -18,14 +20,6 @@ public class FolderRepositoryImpl implements FolderRepository {
 //        if(FOLDERS.stream().noneMatch(folder -> folder.getName().equals("root"))){
 //            FOLDERS.add(new Folder("root", null));
 //        }
-    }
-
-    private static final FolderRepository SINGLETON = new FolderRepositoryImpl();
-
-    private FolderRepositoryImpl() {}
-
-    public static FolderRepository getSingleton() {
-        return SINGLETON;
     }
 
     private static void saveDataToFile(){
@@ -49,12 +43,10 @@ public class FolderRepositoryImpl implements FolderRepository {
             throw new RuntimeException();
         }
     }
-
     @Override
     public Set<Folder> findAll() {
         return FOLDERS;
     }
-
     @Override
     public void save(Folder newFolder) {
         FOLDERS.add(newFolder);
